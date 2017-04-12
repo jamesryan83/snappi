@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Snappi.CreatePage" BackgroundColor="#f4f4f4" Title="SNAPPI">
+
+	<ContentPage.Content>
+		<Grid Padding="0" RowSpacing="0" ColumnSpacing="0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+
+			<!-- Buttons -->
+			<Button VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="DodgerBlue" Grid.Row="0" 
+								BorderRadius="0" BorderWidth="0" BorderColor="Transparent" x:Name="ButtonGallery" Margin="10, 10, 10, 5"></Button>
+			<Button VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="DeepSkyBlue" Grid.Row="1" 
+								BorderRadius="0" BorderWidth="0" BorderColor="Transparent" x:Name="ButtonCamera" Margin="10, 5, 10, 10"></Button>
+
+
+			<!-- Button images and text -->
+			<Image HeightRequest="90" WidthRequest="90" Source="icon_media.png" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" />
+			<Label Text="From Gallery" Grid.Row="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Margin="0,130,0,0" TextColor="White" FontSize="Large"></Label>
+
+			<Image HeightRequest="90" WidthRequest="90" Source="icon_camera.png" Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" />
+			<Label Text="Use Camera" Grid.Row="1" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Margin="0,130,0,0" TextColor="White" FontSize="Large"></Label>
+		</Grid>
+	</ContentPage.Content>
+
+</ContentPage>

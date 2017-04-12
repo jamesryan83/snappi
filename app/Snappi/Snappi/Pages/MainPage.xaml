@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Snappi.MainPage" BackgroundColor="#f4f4f4" Title="SNAPPI">
+
+	<ContentPage.Content>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+
+			
+			<!-- Listview -->
+			<ListView x:Name="ListViewItems" CachingStrategy="RecycleElement" Grid.Row="0" HasUnevenRows="True">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<Frame Padding="15,10,15,10" BackgroundColor="#f4f4f4">
+								<Frame.Content>
+									<StackLayout Padding="10" Orientation="Vertical" BackgroundColor="White">
+										<Image Source="{Binding imageSource}" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" HeightRequest="200" BackgroundColor="White" />
+										<Label IsVisible="{Binding textVisible}" Text="{Binding text}" TextColor="DarkGray" FontSize="16" HorizontalTextAlignment="Center"  />
+										<Label Text="{Binding created_at}" TextColor="DarkGray" HorizontalTextAlignment="Center" FontSize="10" />
+										<Label Text="{Binding date_to_delete}" TextColor="DarkGray" HorizontalTextAlignment="Center" FontSize="10" />
+									</StackLayout>
+								</Frame.Content>
+							</Frame>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+
+
+			<!-- Separator -->
+			<BoxView Color="DarkGray" HeightRequest="1" HorizontalOptions="FillAndExpand" Grid.Row="1"></BoxView>
+			
+
+			<!-- Load more button -->
+			<Button x:Name="ButtonLoadMore" Grid.Row="2" Text="Load More" IsVisible="False" BackgroundColor="RoyalBlue" TextColor="White" BorderRadius="0" BorderWidth="0" 
+					HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="3"></Button>			
+			
+			
+			<!-- Bottom buttons -->
+			<Grid Grid.Row="3" Padding="3">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+
+				<Button Text="Reload" x:Name="ButtonReload" BackgroundColor="RoyalBlue" TextColor="White" BorderRadius="0" BorderWidth="0" Grid.Column="0" 
+						HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Button>
+				<Button Text="Create" x:Name="ButtonCreate" BackgroundColor="RoyalBlue" TextColor="White" BorderRadius="0" BorderWidth="0" Grid.Column="1" 
+						HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Button>
+			</Grid>
+		</Grid>
+		
+	</ContentPage.Content>
+
+</ContentPage>

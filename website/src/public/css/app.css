@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html, body {
+  background-color: #f4f4f4;
+  font-family: Verdana, Geneva, sans-serif; }
+
+input, select, textarea {
+  background-color: transparent;
+  border: none;
+  border: 1px solid #b9b9b9;
+  height: 30px;
+  width: 300px;
+  outline: none;
+  padding: 0 10px;
+  color: #444444; }
+  input:hover, select:hover, textarea:hover {
+    border: 1px solid #777777; }
+  input:focus, select:focus, textarea:focus {
+    border: 1px solid #5f5f5f; }
+  input::-webkit-input-placeholder, select::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: #9d9d9d; }
+  input:-moz-placeholder, select:-moz-placeholder, textarea:-moz-placeholder {
+    color: #9d9d9d; }
+  input::-moz-placeholder, select::-moz-placeholder, textarea::-moz-placeholder {
+    color: #9d9d9d; }
+  input:-ms-input-placeholder, select:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    color: #9d9d9d; }
+
+textarea {
+  padding: 10px; }
+
+button {
+  height: 30px;
+  padding: 0 10px;
+  border: none;
+  outline: none;
+  background-color: #d9d9d9;
+  color: #444444;
+  font-weight: bold;
+  font-size: 12px;
+  border-radius: 2px;
+  cursor: pointer; }
+  button:hover {
+    background-color: #b9b9b9; }
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset; }
+
+input::-ms-clear {
+  display: none; }
+
+.noselect {
+  -webkit-user-select: none;
+  user-select: none; }
+
+.clearfix {
+  clear: both; }
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+#main-container {
+  padding: 20px;
+  text-align: center; }
+  #main-container #navbar {
+    height: 50px;
+    width: 100%;
+    background-color: royalblue;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; }
+    #main-container #navbar > a {
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      height: 50px;
+      line-height: 50px;
+      float: left;
+      margin-left: 20px; }
+    #main-container #navbar button {
+      float: right;
+      margin-right: 20px;
+      margin-top: 10px; }
+  #main-container #items-list {
+    padding-top: 50px; }
+    #main-container #items-list .list-item {
+      margin-top: 20px; }
+      #main-container #items-list .list-item > div {
+        padding: 10px;
+        border-radius: 1px;
+        display: inline-block;
+        background-color: white;
+        max-width: 100%;
+        text-align: center; }
+        #main-container #items-list .list-item > div img {
+          max-width: 100%; }
+        #main-container #items-list .list-item > div p {
+          padding: 3px 0;
+          font-size: 14px;
+          color: #777777; }
+        #main-container #items-list .list-item > div time {
+          display: block;
+          font-size: 12px;
+          color: #b9b9b9; }
+  #main-container #load-more-button {
+    margin-top: 50px; }
+  #main-container #no-more-items {
+    display: none;
+    background-color: #444444;
+    color: white;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 3px 10px;
+    z-index: 900; }
+
+#dialog-container {
+  display: none;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10000; }
+  #dialog-container .dialog {
+    background-color: white;
+    padding: 10px;
+    min-width: 300px; }
+    #dialog-container .dialog h3 {
+      padding: 5px; }
+    #dialog-container .dialog button {
+      float: right;
+      background-color: #d9d9d9;
+      cursor: pointer; }
+      #dialog-container .dialog button:hover {
+        background-color: #b9b9b9; }
+  #dialog-container #dialog-create-item {
+    min-height: 200px; }
+    #dialog-container #dialog-create-item #dialog-create-item-button-browse {
+      float: left;
+      margin-left: 0; }
+    #dialog-container #dialog-create-item textarea {
+      margin: 10px 0;
+      height: 100px;
+      width: 100%;
+      display: block; }
+    #dialog-container #dialog-create-item label {
+      font-size: 14px;
+      padding-left: 5px; }
+    #dialog-container #dialog-create-item p {
+      font-size: 14px;
+      padding: 15px 0 5px 5px; }
+    #dialog-container #dialog-create-item button {
+      margin-top: 10px;
+      margin-left: 10px;
+      width: 80px; }

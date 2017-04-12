@@ -1,0 +1,136 @@
+// Color for input placeholder attribute
+// http://stackoverflow.com/a/27377850
+@mixin placeholder($color, $size:"") {
+    &::-webkit-input-placeholder {
+        color: $color;
+        @if $size != "" {
+            font-size: $size;
+        }
+    }
+        &:-moz-placeholder {
+        color: $color;
+        @if $size != "" {
+            font-size: $size;
+        }
+    }
+    &::-moz-placeholder {
+        color: $color;
+        @if $size != "" {
+            font-size: $size;
+        }
+    }
+    &:-ms-input-placeholder {
+        color: $color;
+        @if $size != "" {
+            font-size: $size;
+        }
+    }
+}
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+html, body {
+    background-color: $colorGray1;
+    font-family: $fonts;
+}
+
+
+
+input, select, textarea {
+    background-color: transparent;
+    border: none;
+    border: 1px solid $colorGray4;
+    height: 30px;
+    width: 300px;
+    outline: none;
+    padding: 0 10px;
+    color: $colorGray10;
+
+    &:hover {
+        border: 1px solid $colorGray6;
+    }
+
+    &:focus {
+        border: 1px solid $colorGray8;
+    }
+
+    @include placeholder($colorGray5);
+}
+
+
+
+textarea {
+    padding: 10px;
+}
+
+
+
+button {
+    height: 30px;
+    padding: 0 10px;
+    border: none;
+    outline: none;
+    background-color: $colorGray3;
+    color: $colorGray10;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 2px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $colorGray4;
+    }
+}
+
+
+
+// remove yellow on chrome inputs
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+
+
+// fix ie thing
+input::-ms-clear {
+    display: none;
+}
+
+
+
+// Make unselectable with mouse
+.noselect {
+    user-select: none;
+}
+
+
+
+// Clear floats
+.clearfix {
+    clear: both;
+}
+
+
+
+// Center in container
+// note - this can make elements with text blurry on chrome
+.center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+
+

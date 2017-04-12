@@ -1,0 +1,72 @@
+
+// Dialog container
+#dialog-container {
+    display: none;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+
+
+    // Generic dialog
+    .dialog {
+        background-color: white;
+        padding: 10px;
+        min-width: 300px;
+
+        h3 {
+            padding: 5px;
+        }
+
+        button {
+            float: right;
+            background-color: $colorGray3;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $colorGray4;
+            }
+        }
+    }
+
+
+    // Create item dialog
+    #dialog-create-item {
+        min-height: 200px;
+
+        #dialog-create-item-button-browse {
+            float: left;
+            margin-left: 0;
+        }
+
+        textarea {
+            margin: 10px 0;
+            height: 100px;
+            width: 100%;
+            display: block;
+        }
+
+        label {
+            font-size: 14px;
+            padding-left: 5px;
+        }
+
+        p {
+            font-size: 14px;
+            padding: 15px 0 5px 5px;
+        }
+
+        button {
+            margin-top: 10px;
+            margin-left: 10px;
+            width: 80px;
+        }
+    }
+}
+
+
+
+

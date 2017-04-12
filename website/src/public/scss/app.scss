@@ -1,0 +1,121 @@
+
+$fonts: Verdana, Geneva, sans-serif;
+
+$colorGray0: #fafafa;
+$colorGray1: #f4f4f4;
+$colorGray2: #e3e3e3;
+$colorGray3: #d9d9d9;
+$colorGray4: #b9b9b9;
+$colorGray5: #9d9d9d;
+$colorGray6: #777777;
+$colorGray7: #626262;
+$colorGray8: #5f5f5f;
+$colorGray9: #585858;
+$colorGray10: #444444;
+$colorGray11: #333333;
+$colorGray12: #222222;
+$colorGray13: #111111;
+$colorGray14: #060606;
+
+
+// Import common stuff 
+@import "common";
+
+
+
+
+// Main container
+#main-container {
+    padding: 20px;
+    text-align: center;
+
+
+    // Navbar
+    #navbar {
+        height: 50px;
+        width: 100%;
+        background-color: royalblue;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+
+        > a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            height: 50px;
+            line-height: 50px;
+            float: left;
+            margin-left: 20px;
+        }
+
+        button {
+            float: right;
+            margin-right: 20px;
+            margin-top: 10px;
+        }
+    }
+
+
+    // Item list
+    #items-list {
+        padding-top: 50px;
+
+
+        // A single item
+        .list-item {
+            margin-top: 20px;
+
+            > div {
+                padding: 10px;
+                border-radius: 1px;
+                display: inline-block;
+                background-color: white;
+                max-width: 100%;
+                text-align: center;
+
+                img {
+                    max-width: 100%;
+                }
+
+                p {
+                    padding: 3px 0;
+                    font-size: 14px;
+                    color: $colorGray6;
+                }
+
+                time {
+                    display: block;
+                    font-size: 12px;
+                    color: $colorGray4;
+                }
+            }
+        }
+
+    }
+
+
+
+    #load-more-button {
+        margin-top: 50px;
+    }
+
+
+    // No more items label
+    #no-more-items {
+        display: none;
+        background-color: $colorGray10;
+        color: white;
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        padding: 3px 10px;
+        z-index: 900;
+    }
+
+}
+
+
+@import "dialogs";
+

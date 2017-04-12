@@ -1,0 +1,17 @@
+{
+  "name": "snappi",
+  "version": "1.0.0",
+  "description": "image website",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "config": "^1.25.1",
+    "express": "^4.15.2",
+    "guid": "0.0.12",
+    "mssql": "^4.0.1"
+  },
+  "devDependencies": {
+  },
+  "author": "jamesryan83",
+  "license": ""
+}

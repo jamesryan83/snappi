@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+
+        <title>SNAPPI</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+
+        <link rel="stylesheet" href="/css/app.css" />
+    </head>
+
+    <body>
+
+        <!-- Main -->
+        <div id="main-container">
+            <div id="navbar">
+                <a href="https://github.com/jamesryan83">SNAPPI</a>
+                <button id="create-button">Create</button>
+            </div>
+
+            <div id="items-list"></div>
+
+            <button id="load-more-button">Load More</button>
+            <label id="no-more-items">No more items</label>
+        </div>
+
+
+        <!-- Dialogs -->
+        <div id="dialog-container">
+
+            <div id="dialog-create-item" class="dialog center">
+                <h3>Create an item</h3>
+                <textarea id="dialog-create-item-textarea" placeholder="Comment..."></textarea>
+                <div>
+                    <label>Delete after: </label>
+                    <select id="dialog-create-item-select">
+                        <option>1 Minute</option>
+                        <option>5 Minutes</option>
+                        <option>30 Minutes</option>
+                        <option>1 Hour</option>
+                        <option>6 Hours</option>
+                        <option>1 Day</option>
+                        <option>7 Days</option>
+                        <option selected>30 Days</option>
+                        <option>Future</option>
+                    </select>
+                </div>
+                <p id="dialog-create-item-path"></p>
+                <div>
+                    <input id="dialog-create-item-button-file" type="file" style="display: none;" />
+                    <button id="dialog-create-item-button-browse">Browse</button>
+                    <button id="dialog-create-item-button-ok">OK</button>
+                    <button id="dialog-create-item-button-cancel">Cancel</button>
+                </div>
+            </div>
+            
+        </div>
+
+
+        <!-- js -->
+        <script src="/js/dialogs.js"></script>
+        <script src="/js/app.js"></script>
+    </body>
+</html>
+
+
+
+
+
