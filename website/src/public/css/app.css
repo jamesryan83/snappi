@@ -106,10 +106,6 @@ input::-ms-clear {
           padding: 3px 0;
           font-size: 14px;
           color: #777777; }
-        #main-container #items-list .list-item > div time {
-          display: block;
-          font-size: 12px;
-          color: #b9b9b9; }
   #main-container #load-more-button {
     margin-top: 50px; }
   #main-container #message-label, #main-container #loading-label {

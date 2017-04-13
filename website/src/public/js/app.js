@@ -53,6 +53,7 @@ app.index = {
                 }
             });
         });
+
     },
 
 
@@ -87,15 +88,16 @@ app.index = {
                         // added and deleting dates
                         var added = moment(items[i].created_at).format("MMMM Do YYYY, h:mm:ss a");
                         var deleting = moment(items[i].date_to_delete).fromNow();
-                        var diffDays = moment(items[i].date_to_delete).diff(moment(Date.now()), "days");
 
+                        // Hide deleting date if over 1 month
+                        var diffDays = moment(items[i].date_to_delete).diff(moment(Date.now()), "days");
                         if (diffDays > 31) {
                             deleting = "";
                         } else {
                             deleting = "Deleting: " + deleting;
                         }
 
-                        // create html item
+                        // create item
                         item =
                             "<div class='list-item' data-id='" + items[i].item_id + "'>" +
                                 "<div>" +
@@ -136,7 +138,7 @@ app.index = {
 
 
 
-    // Generic ajax request - returns (err, data)
+    // Generic ajax request
     ajaxRequest: function (type, url, data, errorMessage, callback) {
         var self = this;
 
