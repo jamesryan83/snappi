@@ -21,7 +21,7 @@ app.index = {
 
         app.dialogs.init();
 
-        
+
         // load first page
         this.getItemsFromServer(function () {
             window.scrollTo(0, self.lastScrollPos);
@@ -81,6 +81,13 @@ app.index = {
                         // added and deleting dates
                         var added = moment(items[i].created_at).format("MMMM Do YYYY, h:mm:ss a");
                         var deleting = moment(items[i].date_to_delete).fromNow();
+                        var diffDays = moment(items[i].date_to_delete).diff(moment(Date.now()), "days");
+
+                        if (diffDays > 31) {
+                            deleting = "";
+                        } else {
+                            deleting = "Deleting: " + deleting;
+                        }
 
                         // create html item
                         item =
@@ -89,7 +96,7 @@ app.index = {
                                     "<img src='data:image/png;base64," + items[i].image + "'/>" +
                                     "<p>" + itemtext + "</p>" +
                                     "<p>Added: " + added + "</p>" +
-                                    "<p>Deleting: " + deleting + "</p>" +
+                                    "<p>" + deleting + "</p>" +
                                 "</div>" +
                             "</div>";
 
