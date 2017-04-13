@@ -10,7 +10,7 @@ Made with Xamarin.Forms, Node.js, jQuery hosted on Azure with an MSSQL server
 
 There's one tiny SQL table...
 
-'''
+```
 CREATE TABLE items
 (
 	item_id int PRIMARY KEY IDENTITY(1,1) NOT NULL,	
@@ -19,7 +19,7 @@ CREATE TABLE items
 	date_to_delete DATETIME2 NOT NULL,
 	created_at DATETIME2 NOT NULL DEFAULT GETUTCDATE()
 )
-'''
+```
 
 Tested on a Samsung Galaxy S5 and Chrome 57 Browser
 
