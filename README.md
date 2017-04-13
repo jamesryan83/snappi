@@ -6,7 +6,9 @@ Create images on the app and see them on the website and vice versa
 
 Everything created is publicly visible, everyone sees the same list of images
 
-Made with Xamarin.Forms, Node.js, jQuery hosted on Azure with an MSSQL server
+Posted images can be deleted after a set time if you want
+
+Made with Xamarin.Forms, Node.js/Express, jQuery hosted on Azure with an MSSQL server
 
 There's one tiny SQL table...
 
@@ -21,7 +23,7 @@ CREATE TABLE items
 )
 ```
 
-Tested on a Samsung Galaxy S5 and Chrome 57 Browser
+Tested on a Samsung Galaxy S5 and Chrome 57 Browser.  The iOS app is untested 
 
 [Website is here](http://snappi.azurewebsites.net/)
 

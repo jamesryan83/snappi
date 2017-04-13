@@ -57,7 +57,6 @@ function addItem (item, callback) {
 
     var query = "INSERT INTO items (text, image, date_to_delete) OUTPUT INSERTED.item_id VALUES (@text, @image, @date_to_delete);";
 
-    deleteOldItems();
     executeQuery(query, parameters, callback);
 }
 
@@ -69,7 +68,6 @@ function getItems (page, callback) {
         " OFFSET " + (itemsPerPage * (page - 1)) +
         " ROWS FETCH NEXT " + itemsPerPage + " ROWS ONLY;";
 
-    deleteOldItems();
     executeQuery(query, null, callback);
 }
 
