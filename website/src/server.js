@@ -17,18 +17,37 @@ app.get("/items", function (req, res) {
         page = req.query.page;
     }
 
-    database.getItems(page, function (err, result) {
-        if (result) result = result.recordset;
-        res.send({ err: err, data: result });
+    // TODO : remove deleteOldItems and replace with automated sql script
+    database.deleteOldItems(function (err) {
+        database.getItems(page, function (err, result) {
+            if (err) {
+                res.send({ err: err });
+
+            } else {
+                if (result) result = result.recordset;
+                res.send({ err: err, data: result });
+            }
+        });
     });
 });
 
 
 // Add a new item
 app.post("/item", function (req, res) {
-    database.addItem(req.body, function (err, result) {
-        var insertedItemId = result.recordset[0].item_id;
-        res.send({ err: err, data: insertedItemId });
+    database.deleteOldItems(function (err) {
+        database.addItem(req.body, function (err, result) {
+            if (err) {
+                res.send({ err: err });
+
+            } else {
+                var insertedItemId = -1;
+                if (result && result.recordset) {
+                    insertedItemId = result.recordset[0].item_id;
+                }
+
+                res.send({ err: err, data: insertedItemId });
+            }
+        });
     });
 });
 

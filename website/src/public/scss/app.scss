@@ -18,7 +18,7 @@ $colorGray13: #111111;
 $colorGray14: #060606;
 
 
-// Import common stuff 
+// Import common stuff
 @import "common";
 
 
@@ -102,16 +102,23 @@ $colorGray14: #060606;
     }
 
 
-    // No more items label
-    #no-more-items {
+    // Message label
+    #message-label, #loading-label {
         display: none;
         background-color: $colorGray10;
         color: white;
         position: fixed;
         bottom: 10px;
         right: 10px;
-        padding: 3px 10px;
+        padding: 5px 15px;
         z-index: 900;
+        font-size: 0.9em;
+    }
+
+    #loading-label {
+        bottom: 10px;
+        left: 10px;
+        right: auto;
     }
 
 }

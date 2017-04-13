@@ -76,8 +76,8 @@ function getItems (page, callback) {
 
 
 // Delete items from database pending deletion
-function deleteOldItems () {
-    executeQuery("DELETE FROM items WHERE date_to_delete < GETUTCDATE()");
+function deleteOldItems (callback) {
+    executeQuery("DELETE FROM items WHERE date_to_delete < GETUTCDATE()", null, callback);
 }
 
 
@@ -110,5 +110,6 @@ function executeQuery (query, params, callback) {
 
 exports = module.exports = {
     addItem: addItem,
-    getItems: getItems
+    getItems: getItems,
+    deleteOldItems: deleteOldItems
 }

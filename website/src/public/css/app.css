@@ -112,15 +112,20 @@ input::-ms-clear {
           color: #b9b9b9; }
   #main-container #load-more-button {
     margin-top: 50px; }
-  #main-container #no-more-items {
+  #main-container #message-label, #main-container #loading-label {
     display: none;
     background-color: #444444;
     color: white;
     position: fixed;
     bottom: 10px;
     right: 10px;
-    padding: 3px 10px;
-    z-index: 900; }
+    padding: 5px 15px;
+    z-index: 900;
+    font-size: 0.9em; }
+  #main-container #loading-label {
+    bottom: 10px;
+    left: 10px;
+    right: auto; }
 
 #dialog-container {
   display: none;

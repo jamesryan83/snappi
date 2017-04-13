@@ -41,6 +41,8 @@ app.index = {
             app.dialogs.createItemDialog.show(function (success, result) {
                 if (success) {
 
+                    self.showToastMessage("Creating Item, Please Wait");
+
                     self.ajaxRequest("POST", "/item", result, "Error posting item", function (err, id) {
                         if (err) {
                             alert(err);
@@ -59,13 +61,17 @@ app.index = {
         var self = this;
 
         $("#load-more-button").hide();
+        $("#loading-label").show();
 
         this.ajaxRequest("GET", "/items?page=" + this.nextPage, null,
-                         "Error getting latests items", function (err, items) {
+                         "Error getting latest items", function (err, items) {
+
+            $("#loading-label").hide();
+
             if (!err) {
                 self.lastScrollPos = self.nextPage === 1 ? 0 : window.scrollY;
 
-                if (items.length > 0) {
+                if (items && items.length > 0) {
                     self.nextPage++;
 
                     // Add items to item list
@@ -106,12 +112,7 @@ app.index = {
                     $("#items-list").append(frag);
 
                 } else {
-
-                    // No more items message
-                    $("#no-more-items").show();
-                    setTimeout(function () {
-                        $("#no-more-items").hide();
-                    }, 2000);
+                    self.showToastMessage("No more items");
                 }
 
                 $("#load-more-button").show();
@@ -124,8 +125,20 @@ app.index = {
 
 
 
+    // Toast message label
+    showToastMessage: function (text) {
+        $("#message-label").text(text);
+        $("#message-label").show();
+        setTimeout(function () {
+            $("#message-label").hide();
+        }, 3000);
+    },
+
+
+
     // Generic ajax request - returns (err, data)
     ajaxRequest: function (type, url, data, errorMessage, callback) {
+        var self = this;
 
         $.ajax({
             type: type,
@@ -133,7 +146,8 @@ app.index = {
             data: data,
             success: function (result) {
                 if (result.err) {
-                    app.util.showToast("Error", errorMessage || result.err);
+                    console.log(result.err)
+                    self.showToastMessage(errorMessage);
                     return callback(result);
                 }
 
@@ -141,7 +155,7 @@ app.index = {
             },
             error: function (err) {
                 console.log(err);
-                app.util.showToast("Error", errorMessage);
+                self.showToastMessage(errorMessage);
                 return callback(err);
             }
         });
