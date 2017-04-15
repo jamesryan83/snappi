@@ -23,7 +23,9 @@ CREATE TABLE items
 )
 ```
 
-Tested on a Samsung Galaxy S5 and Chrome 57 Browser.  The iOS app is untested 
+Tested on a Samsung Galaxy S5 and Chrome 57 Browser.  The iOS app is untested
+
+There's a signed apk in the root folder of the repository if you want to try it out on your phone
 
 [Website is here](http://snappi.azurewebsites.net/)
 
