@@ -9,6 +9,7 @@
     position: fixed;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 10000;
+    pointer-events: all;
 
 
     // Generic dialog
@@ -36,7 +37,7 @@
     // Create item dialog
     #dialog-create-item {
         min-height: 200px;
-
+ 
         #dialog-create-item-button-browse {
             float: left;
             margin-left: 0;

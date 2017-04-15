@@ -131,15 +131,16 @@ namespace Snappi
 
 			} catch (HttpRequestException webex)
 			{				
-				await DisplayAlert("Error", "Please try reloading", "OK");
+				await DisplayAlert("Alert", "Please try reloading", "OK");
 				Console.WriteLine(webex.InnerException.Message);
 				setLoadingButton("hide");
 				isLoading = false;
 
 			} catch (Exception ex)
-			{				
-				await DisplayAlert("Error", ex.Message, "OK");
+			{
+				await DisplayAlert("Alert", "Please try reloading", "OK");
 				Console.WriteLine(ex.Message);
+				Console.WriteLine(ex.StackTrace);
 				setLoadingButton("hide");
 				isLoading = false;
 			}

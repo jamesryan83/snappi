@@ -46,7 +46,7 @@
 							<x:String>30 Days</x:String>
 							<x:String>Future</x:String>
 						</Picker.Items>
-						<Picker.SelectedIndex>6</Picker.SelectedIndex>
+						<Picker.SelectedIndex>5</Picker.SelectedIndex>
 					</Picker>
 				</Grid>
 			</Grid>

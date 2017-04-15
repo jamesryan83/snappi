@@ -131,7 +131,8 @@ input::-ms-clear {
   left: 0;
   position: fixed;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 10000; }
+  z-index: 10000;
+  pointer-events: all; }
   #dialog-container .dialog {
     background-color: white;
     padding: 10px;

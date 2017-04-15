@@ -25,6 +25,7 @@
             <div id="items-list"></div>
 
             <button id="load-more-button">Load More</button>
+            
             <label id="message-label"></label>
             <label id="loading-label">Loading Items...</label>
         </div>
@@ -35,7 +36,9 @@
 
             <div id="dialog-create-item" class="dialog center">
                 <h3>Create an item</h3>
+
                 <textarea id="dialog-create-item-textarea" placeholder="Comment..."></textarea>
+
                 <div>
                     <label>Delete after: </label>
                     <select id="dialog-create-item-select">
@@ -44,13 +47,15 @@
                         <option>30 Minutes</option>
                         <option>1 Hour</option>
                         <option>6 Hours</option>
-                        <option>1 Day</option>
+                        <option selected>1 Day</option>
                         <option>7 Days</option>
-                        <option selected>30 Days</option>
+                        <option>30 Days</option>
                         <option>Future</option>
                     </select>
                 </div>
+
                 <p id="dialog-create-item-path"></p>
+
                 <div>
                     <input id="dialog-create-item-button-file" type="file" style="display: none;" />
                     <button id="dialog-create-item-button-browse">Browse</button>
